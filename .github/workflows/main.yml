@@ -16,8 +16,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Merge prod to master
         run: |
-          git pull origin master,
-          git pull origin prod,
           git checkout master,
           git merge prod,
           git push.
