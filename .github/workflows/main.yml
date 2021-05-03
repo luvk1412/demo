@@ -16,6 +16,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Merge prod to master
         run: |
-          git fetch origin prod:master
+          git fetch origin prod:master,
           git push.
 
