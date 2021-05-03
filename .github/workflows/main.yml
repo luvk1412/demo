@@ -3,7 +3,7 @@ name: Merge Prod -> Master
 on:
   # Triggers the workflow on push request events but only for the prod branch
   push:
-    branches: [ prod1 ]
+    branches: [ prod ]
 jobs:
   nightly-merge:
 
@@ -11,13 +11,15 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
 
     - name: Nightly Merge
-      uses: robotology/gh-action-nightly-merge@v1.3.1
+      uses: robotology/gh-action-nightly-merge@v1.3.2
       with:
         stable_branch: 'prod'
         development_branch: 'master'
         allow_ff: true
+        ff_only: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MEDUSA_PUSH_TOKEN: ${{ secrets.MEDUSA_PUSH_TOKEN }}
