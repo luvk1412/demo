@@ -16,9 +16,7 @@ jobs:
         run: |
           git config user.name "medusa-prod-auto-commit"
           git config user.email "medusaalerts@flockgroups.com"
-          git fetch origin master
-          git fetch origin prod
-          git checkout master
+          git checkout -b master origin/master
           git pull --rebase
-          git merge prod
+          git merge origin/prod
           git push origin master
