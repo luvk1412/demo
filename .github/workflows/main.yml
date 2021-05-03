@@ -19,5 +19,7 @@ jobs:
         stable_branch: 'prod'
         development_branch: 'master'
         allow_ff: true
+        ff_only: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MEDUSA_PUSH_TOKEN: ${{ secrets.MEDUSA_PUSH_TOKEN }}
