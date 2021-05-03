@@ -14,11 +14,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Merge Prod->Master
-      uses: robotology/gh-action-nightly-merge@v1.3.1
+    - name: Up Merge
+      uses: bambamboole/gha-upmerge@master
       with:
         stable_branch: 'prod'
         development_branch: 'master'
-        allow_ff: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
