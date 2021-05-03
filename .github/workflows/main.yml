@@ -18,6 +18,6 @@ jobs:
       with:
         stable_branch: 'prod'
         development_branch: 'master'
-        allow_ff: false
+        allow_ff: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
