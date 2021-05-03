@@ -2,7 +2,7 @@ name: Merge Prod -> master
 
 on:
   push:
-    branches: [ prod ]
+    branches: [ prod1 ]
 jobs:
   build:
     runs-on: ubuntu-latest
