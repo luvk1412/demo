@@ -13,7 +13,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com:luvk1412/demo.git
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/luvk1412/demo.git
         git config user.name "test"
         git config user.email "test@test.com"
         git fetch origin master
