@@ -19,5 +19,5 @@ jobs:
         git fetch origin master
         git fetch origin prod
         git checkout -b master origin/master
-        git merge prod --ff-only
+        git merge origin/prod --ff-only
         git push origin master
