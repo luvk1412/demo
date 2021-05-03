@@ -15,7 +15,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Up Merge
-      uses: bambamboole/gha-upmerge@master
+      uses: bambamboole/gha-upmerge@v1.0.1
+
       with:
         stable_branch: 'prod'
         development_branch: 'master'
