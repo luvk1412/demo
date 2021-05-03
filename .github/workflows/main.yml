@@ -1,4 +1,4 @@
-name: Prod merge on PR merge
+name: Merge Prod -> Master
 
 on:
   # Triggers the workflow on push request events but only for the prod branch
@@ -6,15 +6,19 @@ on:
     branches: [ prod ]
 
 jobs:
-  build:
+  nightly-merge:
+
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Merge prod to master
-        run: |
-          git fetch origin prod:master && git push
-
+    - name: Merge Prod->Master
+      uses: robotology/gh-action-nightly-merge@v1.3.1
+      with:
+        stable_branch: 'master'
+        development_branch: 'devel'
+        allow_ff: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
