@@ -19,5 +19,6 @@ jobs:
           git fetch origin master
           git fetch origin prod
           git checkout master
+          git pull --rebase
           git merge prod --ff --allow-unrelated-histories
           git push origin master
