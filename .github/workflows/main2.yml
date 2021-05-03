@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
       - name: Merge prod->master ff_only
         env:
@@ -20,5 +20,5 @@ jobs:
           git fetch origin prod
           git checkout master
           git pull --rebase
-          git merge prod --ff-only --allow-unrelated-histories
+          git merge prod
           git push origin master
