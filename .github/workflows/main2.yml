@@ -2,18 +2,19 @@ name: Merge Prod -> master
 
 on:
   push:
-    branches: [ prod1 ]
+    branches: [ prod ]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - run: |
           git config user.name "test"
           git config user.email "test@test.com"
           git fetch origin master
           git fetch origin prod
           git checkout master
-          git pull --rebase
           git merge prod --ff-only --allow-unrelated-histories
           git push origin master
